@@ -16,7 +16,7 @@ Require valid-user
 # Compression module
 <IfModule mod_deflate.c>
     SetOutputFilter DEFLATE
-    # Regex for anything that is already zip so dont zip it ok 
+    # Regex for anything that is already zip / compressed so dont zip it ok 
     SetEnvIfNoCase Request_URI \
         \.(?:gif|jpe?g|png|pdf|exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
 </IfModule>
