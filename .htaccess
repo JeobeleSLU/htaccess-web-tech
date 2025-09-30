@@ -1,17 +1,23 @@
 # Authentication config
-AuthType Basic
-AuthName "Restricted Area"
-AuthUserFile C:/wamp64/.htpasswd
-Require valid-user
-
+# It would only 
+<FilesMatch "index">
+    AuthType Basic
+    AuthName "Restricted Area"
+    AuthUserFile C:/wamp64/.htpasswd
+    Require valid-user
+</FilesMatch>
 
 # If module are just if statements that checks if module exists to stop throwing errors
 # Cache control headers
 <IfModule mod_headers.c>
-    <FilesMatch "\.(html)$">
-        Header set Cache-Control "no-cache, no-store, must revalidate, public" 
+    <FilesMatch "\.(html|json|xml)$">
+        Header set Cache-Control "no-cache, no-store, must revalidate, private" 
     </Filesmatch>
+    # Ranges
+    Header set Accept-Ranges bytes
 </IfModule>
+
+FileETag MTime Size
 
 # Compression module
 <IfModule mod_deflate.c>
