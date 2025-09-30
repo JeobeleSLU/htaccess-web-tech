@@ -10,7 +10,7 @@
 # If module are just if statements that checks if module exists to stop throwing errors
 # Cache control headers
 <IfModule mod_headers.c>
-    <FilesMatch "\.(html|json|xml)$">
+    <FilesMatch "index">
         Header set Cache-Control "no-cache, no-store, must revalidate, private" 
     </Filesmatch>
     # Ranges
