@@ -180,7 +180,11 @@ curl -I -H "If-None-Match: \"etag-here\"" http://localhost/trial/data.html
 - on devtools check on the network tab 
 - navigate to the http://localhost/trial/data
 - click on the data
-- check the headers 
+- check the headers
+- Check if 200 is received
+- now reload the page
+- Check for code 304 not modified
+- Now modify it again it should be 200
 
 
 ## Content Negotiation ##
