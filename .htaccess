@@ -1,0 +1,26 @@
+# Authentication config
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile C:/wamp64/.htpasswd
+Require valid-user
+
+
+# If module are just if statements that checks if module exists to stop throwing errors
+# Cache control headers
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html)$">
+        Header set Cache-Control "no-cache, no-store, must revalidate, public" 
+    </Filesmatch>
+</IfModule>
+
+# Compression module
+<IfModule mod_deflate.c>
+    SetOutputFilter DEFLATE
+    # Regex for anything that is already zip so dont zip it ok 
+    SetEnvIfNoCase Request_URI \
+        \.(?:gif|jpe?g|png|pdf|exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+</IfModule>
+
+# Content negotiation shiz
+Options +MultiViews
+
