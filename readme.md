@@ -92,7 +92,7 @@ curl -I -u wrong:wrong http://localhost/trial/
 ````
 - To authenticate 
 ```cmd
-curl -I -U correct-user:correct-password http://localhost/trial/
+curl -I -u correct-user:correct-password http://localhost/trial/
 ```
 
 **Browser**
