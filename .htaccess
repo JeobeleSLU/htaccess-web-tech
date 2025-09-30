@@ -17,14 +17,15 @@
     Header set Accept-Ranges bytes
 </IfModule>
 
+# for Etag
 FileETag MTime Size
 
 # Compression module
 <IfModule mod_deflate.c>
     SetOutputFilter DEFLATE
-    # Regex for anything that is already zip / compressed so dont zip it ok 
+    # Regex for anything that is already zip / compressed so dont zip it ok i removed png even though it should be here since its already compressed for demo purposes
     SetEnvIfNoCase Request_URI \
-        \.(?:gif|jpe?g|png|pdf|exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+        \.(?:gif|jpe?g|pdf|exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
 </IfModule>
 
 # Content negotiation shiz

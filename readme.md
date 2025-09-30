@@ -123,6 +123,7 @@ curl -I -u user:passowrd http://localhost/trial/
 
 ## Compression ##
 - Check if this line exists in the .htaccess and the deflate_module is enabled
+
 ```.htaccess
 <IfModule mod_deflate.c>
     SetOutputFilter DEFLATE
@@ -133,6 +134,8 @@ curl -I -u user:passowrd http://localhost/trial/
 ```
 
 To verify if it is compressed
+ ***Note if the picture is needed use the picture .html under resource ***
+
  **Curl**
 - compare the [Content-Length] and [Content-Encoding]
 - Accept the original file no compression 
