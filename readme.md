@@ -133,8 +133,10 @@ curl -I -u user:passowrd http://localhost/trial/
 </IfModule>
 ```
 
-To verify if it is compressed
  ***Note if the picture is needed use the picture .html under resource ***
+
+
+To verify if it is compressed
 
  **Curl**
 - compare the [Content-Length] and [Content-Encoding]
